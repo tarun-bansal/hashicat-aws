@@ -69,7 +69,7 @@ resource "aws_security_group" "hashicat" {
   }
 }
 
-resource "aws_internet_gateway" "hashicat" {
+resource "aws_internet_gateway" "hashicat-new" {
   vpc_id = aws_vpc.hashicat.id
 
   tags = {
