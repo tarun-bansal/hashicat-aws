@@ -69,7 +69,7 @@ resource "aws_security_group" "hashicat" {
   }
 }
 
-resource "aws_internet_gateway" "hashicat" {
+resource "aws_internet_gateway" "hashicat_new" {
   vpc_id = aws_vpc.hashicat.id
 
   tags = {
@@ -82,7 +82,7 @@ resource "aws_route_table" "hashicat" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.hashicat.id
+    gateway_id = aws_internet_gateway.hashicat_new.id
   }
 }
 
